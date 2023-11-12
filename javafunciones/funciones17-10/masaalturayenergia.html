@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energía Potencial y Velocidad</title>
+    <script type="text/javascript">
+        function pedirDatos() {
+            var masa = parseFloat(prompt("Ingrese la masa del cuerpo (en kg):"));
+            var altura = parseFloat(prompt("Ingrese la altura desde la que cae el cuerpo (en metros):"));
+
+            var energiaPotencial = calcularEp(masa, altura);
+            var velocidadAlSuelo = calcularVelocidadAlSuelo(energiaPotencial, masa);
+
+            alert("Energía Potencial: " + energiaPotencial.toFixed(2) + " J\nVelocidad al Suelo: " + velocidadAlSuelo.toFixed(2) + " m/s");
+
+            if (velocidadAlSuelo > 100) {
+                alert("¡Qué rápido llega al suelo!");
+            } else {
+                alert("Va lento.");
+            }
+        }
+
+        function calcularEp(m, h) {
+            // Calcular la energía potencial
+            var g = 9.8; // Aceleración debida a la gravedad en m/s^2
+            return m * g * h;
+        }
+
+        function calcularVelocidadAlSuelo(Ep, m) {
+            // Calcular la velocidad al suelo
+            return Math.sqrt(2 * Ep / m);
+        }
+    </script>
+</head>
+<body>
+    <p>Haga clic en el siguiente botón para ingresar la masa y altura y obtener resultados:</p>
+    <form>
+        <input type="button" onclick="pedirDatos()" value="Calcular">
+    </form>
+</body>
+</html>
