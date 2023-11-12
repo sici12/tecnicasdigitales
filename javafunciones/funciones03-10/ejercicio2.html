@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypotenuse Calculator</title>
+    <script type="text/javascript">
+        // JavaScript code
+        function hypotenuse(a, b) {
+            // Helper function to calculate the square of a number
+            function square(x) {
+                return x * x;
+            }
+
+            // Calculate the hypotenuse using the Pythagorean theorem
+            return Math.sqrt(square(a) + square(b));
+        }
+
+        // Function to be called on button click
+        function secondFunction() {
+            // Call the hypotenuse function with example values (1 and 2)
+            var result = hypotenuse(1, 2);
+
+            // Display the result using document.write
+            document.write(result);
+        }
+    </script>
+</head>
+<body>
+    <p>Click the following button to call the function</p>
+    <form>
+        <input type="button" onclick="secondFunction()" value="Call Function">
+    </form>
+    <p>Use different parameters inside the function and then try...</p>
+</body>
+</html>
