@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        <!--
+
+        var M;
+        var H;
+   		  G= 9.8
+      function EP( M,H,G){
+        	ResultadoEP= M*G*H;
+    	return ResultadoEP;
+}	
+		function  V(M,H,G){
+
+			ResultadoV= 2*EP(M,H,G)/M;
+			RaizV= Math.sqrt (ResultadoV) 
+ 		return RaizV;
+}
+        function pedirDatos(){
+            M = Number(prompt("Ingresar la masa en KG 7///7"))
+            H= Number(prompt("Ingrese la altura en M :b"))
+					document.write ("R E S U L T A D O S");document.write ("<br/>");document.write ("<br/>");
+ 					document.write ("El valor de la energia potencial " +EP(M,H,G));document.write ("<br/>");document.write ("<br/>");
+ 					document.write ("El valor de la energia cinematica en 0 es " +EP(M,H,G));document.write ("<br/>");document.write ("<br/>");
+ 			 		document.write ("El valor de la velocidad es " +V(M,H,G));document.write ("<br/>");document.write ("<br/>");
+                    document.write('<p><a href="../index.html">VOLVER AL INDEX</a></p>');document.write ("<br/>");document.write ("<br/>");
+}
+ </script>
+ </head>
+   	 <body>
+ <h1> <center style="color:red";> ඞඞඞඞඞ MAQUINA INGRESAME LA MASA Y LA ALTURA  ඞඞඞඞඞ </h1> </center>
+      <form>
+ <center> <input type="button" onclick="pedirDatos()" value="Call Function"> </center>
+      </form>
+ <p><a href="../index.html">VOLVER AL INDEX</a></p>
+    </body>
+	</html>
