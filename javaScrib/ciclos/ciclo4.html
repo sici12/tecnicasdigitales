@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclos4</title>
+</head>
+<body>
+
+    <h1>Mi Página</h1>
+
+    <!-- Contenido de la página -->
+
+    <!-- Pie de página con código de las páginas 55 y 56 -->
+
+    <footer>
+        <!-- Código de la página 55 -->
+        <script>
+            // Operaciones de la página 55
+            function bucleForOf() {
+                var colores = ["Rojo", "Verde", "Azul"];
+
+                // Diferencia con ejercicios anteriores: uso de for...of para iterar sobre elementos del array
+                for (var color of colores) {
+                    console.log("Color: " + color);
+                }
+            }
+
+            // Ejemplo de uso
+            bucleForOf();
+        </script>
+
+        <!-- Código de la página 56 -->
+        <script>
+            // Operaciones de la página 56
+            function etiquetasBreakContinue() {
+                externo: for (var i = 0; i < 3; i++) {
+                    for (var j = 0; j < 3; j++) {
+                        if (i === 1 && j === 1) {
+                            console.log("Se detuvo en la iteración externa: " + i + ", interna: " + j);
+                            break externo;
+                        }
+                        console.log("Iteración externa: " + i + ", interna: " + j);
+                    }
+                }
+            }
+
+            // Ejemplo de uso
+            etiquetasBreakContinue();
+        </script>
+    </footer>
+
+</body>
+</html>
