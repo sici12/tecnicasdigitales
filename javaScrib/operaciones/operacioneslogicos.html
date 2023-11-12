@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OperadoresLogicos1</title>
+</head>
+<body>
+
+    <h1>Mi Página</h1>
+
+    <!-- Contenido de la página -->
+
+    <!-- Pie de página con código de la página 27 -->
+
+    <footer>
+        <!-- Código de la página 27 -->
+        <script>
+            // Operaciones de la página 27
+            function verificarCondiciones(edad, tienePermiso) {
+                // Comprobar si la persona puede conducir
+                if (edad >= 18 && tienePermiso) {
+                    return "Puede conducir";
+                } else if (edad < 18) {
+                    return "No tiene la edad suficiente para conducir";
+                } else if (!tienePermiso) {
+                    return "No tiene permiso para conducir";
+                }
+            }
+
+            // Ejemplo de uso
+            var resultadoVerificacion = verificarCondiciones(20, true);
+            console.log(resultadoVerificacion);
+        </script>
+    </footer>
+
+</body>
+</html>
