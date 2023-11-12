@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impedancia del Circuito</title>
+    <script type="text/javascript">
+        function calcularXL(R, L, F) {
+            // XL es la reactancia inductiva en un circuito RL
+            return 2 * Math.PI * F * L;
+        }
+
+        function calcularXC(R, C, F) {
+            // XC es la reactancia capacitiva en un circuito RC
+            return 1 / (2 * Math.PI * F * C);
+        }
+
+        function calcularModuloZ(R, XL, XC) {
+            // El módulo de la impedancia Z en un circuito RLC
+            return Math.sqrt(Math.pow(R, 2) + Math.pow(XL - XC, 2));
+        }
+
+        function calcularPhi(R, XL, XC) {
+            // Ángulo de fase en un circuito RLC
+            return Math.atan((XL - XC) / R);
+        }
+
+        function calcularParteReal(Z, phi) {
+            // Parte real de la impedancia Z
+            return Z * Math.cos(phi);
+        }
+
+        function calcularParteImaginaria(Z, phi) {
+            // Parte imaginaria de la impedancia Z
+            return Z * Math.sin(phi);
+        }
+
+        function obtenerDatos() {
+            // Obtener datos del usuario
+            var R = parseFloat(prompt("Ingrese el valor de la resistencia (R):"));
+            var L = parseFloat(prompt("Ingrese el valor de la inductancia (L):"));
+            var C = parseFloat(prompt("Ingrese el valor de la capacitancia (C):"));
+            var F = parseFloat(prompt("Ingrese la frecuencia (F):"));
+
+            // Calcular XL, XC, Mod(Z), Phi, Parte Real e Imaginaria
+            var XL = calcularXL(R, L, F);
+            var XC = calcularXC(R, C, F);
+            var modZ = calcularModuloZ(R, XL, XC);
+            var phi = calcularPhi(R, XL, XC);
+            var parteReal = calcularParteReal(modZ, phi);
+            var parteImaginaria = calcularParteImaginaria(modZ, phi);
+
+            // Mostrar resultados
+            alert("Resultados:\nXL: " + XL + "\nXC: " + XC + "\nMod(Z): " + modZ +
+                  "\nPhi: " + phi + "\nParte Real: " + parteReal + "\nParte Imaginaria: " + parteImaginaria);
+        }
+    </script>
+</head>
+<body>
+    <p>Haga clic en el siguiente botón para ingresar valores y obtener resultados:</p>
+    <form>
+        <input type="button" onclick="obtenerDatos()" value="Calcular Impedancia">
+    </form>
+</body>
+</html>
