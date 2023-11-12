@@ -1,0 +1,29 @@
+import math
+
+def hipotenusa(base, altura):
+    """
+    Calcula la hipotenusa de un triángulo dado su base y altura.
+    """
+    return math.sqrt(base**2 + altura**2)
+
+def calcular_perimetro(base, altura):
+    """
+    Calcula el perímetro de un triángulo dado su base y altura.
+    """
+    hip = hipotenusa(base, altura)
+    return base + altura + hip
+
+def calcular_superficie(base, altura):
+    """
+    Calcula la superficie de un triángulo dado su base y altura.
+    """
+    return (base * altura) / 2
+
+# Ingreso de datos por teclado
+base = float(input("Ingrese la base del triángulo: "))
+altura = float(input("Ingrese la altura del triángulo: "))
+
+# Llamada a las funciones e impresión de resultados
+print(f"Hipotenusa: {hipotenusa(base, altura)}")
+print(f"Perímetro: {calcular_perimetro(base, altura)}")
+print(f"Superficie: {calcular_superficie(base, altura)}")
