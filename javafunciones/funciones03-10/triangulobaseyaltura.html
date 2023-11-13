@@ -1,29 +1,40 @@
-import math
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones Triángulo</title>
+    <script type="text/javascript">
+        function calcularArea(base, altura) {
+            // Calcular el área del triángulo
+            return (base * altura) / 2;
+        }
 
-def hipotenusa(base, altura):
-    """
-    Calcula la hipotenusa de un triángulo dado su base y altura.
-    """
-    return math.sqrt(base**2 + altura**2)
+        function calcularPerimetro(base, altura) {
+            // Calcular el perímetro del triángulo
+            var lado = Math.sqrt(Math.pow(base / 2, 2) + Math.pow(altura, 2));
+            return base + 2 * lado;
+        }
 
-def calcular_perimetro(base, altura):
-    """
-    Calcula el perímetro de un triángulo dado su base y altura.
-    """
-    hip = hipotenusa(base, altura)
-    return base + altura + hip
+        function mostrarResultados() {
+            // Obtener datos del usuario
+            var base = parseFloat(prompt("Ingrese la base del triángulo:"));
+            var altura = parseFloat(prompt("Ingrese la altura del triángulo:"));
 
-def calcular_superficie(base, altura):
-    """
-    Calcula la superficie de un triángulo dado su base y altura.
-    """
-    return (base * altura) / 2
+            // Calcular el área y el perímetro
+            var area = calcularArea(base, altura);
+            var perimetro = calcularPerimetro(base, altura);
 
-# Ingreso de datos por teclado
-base = float(input("Ingrese la base del triángulo: "))
-altura = float(input("Ingrese la altura del triángulo: "))
+            // Mostrar resultados
+            alert("Área del triángulo: " + area.toFixed(2) + "\nPerímetro del triángulo: " + perimetro.toFixed(2));
+        }
+    </script>
+</head>
+<body>
+    <p>Haga clic en el siguiente botón para ingresar la base y altura y obtener resultados:</p>
+    <form>
+        <input type="button" onclick="mostrarResultados()" value="Calcular">
+    </form>
+</body>
+</html>
 
-# Llamada a las funciones e impresión de resultados
-print(f"Hipotenusa: {hipotenusa(base, altura)}")
-print(f"Perímetro: {calcular_perimetro(base, altura)}")
-print(f"Superficie: {calcular_superficie(base, altura)}")
